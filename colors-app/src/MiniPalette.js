@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { withStyles } from "@material-ui/styles";
 
 ///JSS also known as CSS in JS. This feature
@@ -17,7 +18,11 @@ const styles = {
     },
   },
   colors: {
-    backgroundColor: "grey",
+    backgroundColor: "#dae1e4",
+    borderRadius: "5px",
+    overflow: "hidden",
+    height: "150px",
+    width: "100%",
   },
   title: {
     display: "flex",
@@ -33,6 +38,14 @@ const styles = {
     marginLeft: "0.5rem",
     fontSize: "1.5rem",
   },
+  miniColor: {
+    height: "25%",
+    width: "20%",
+    display: "inline-block",
+    margin: "0 auto",
+    position: "relative",
+    marginBottom: "-3.5px",
+  },
 };
 
 class MiniPalette extends Component {
@@ -41,10 +54,20 @@ class MiniPalette extends Component {
     //with material-ui. it takes our "main" style and
     //gives it a unique id (on top of the class name)
     //which makes it unique to this component.
-    const { classes, paletteName, emoji } = this.props;
+    const { classes, paletteName, emoji, colors, id } = this.props;
+
+    const miniColorBoxes = colors.map((el) => (
+      <div
+        className={classes.miniColor}
+        style={{ backgroundColor: el.color }}
+        key={el.name}
+      ></div>
+    ));
     return (
       <div className={classes.root}>
-        <div className={classes.colors}></div>
+        <Link to={`/palette/${id}`}>
+          <div className={classes.colors}>{miniColorBoxes}</div>
+        </Link>
         <h5 className={classes.title}>
           {paletteName} <span className={classes.emoji}>{emoji}</span>
         </h5>
