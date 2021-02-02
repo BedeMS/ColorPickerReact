@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+/// in order to have JSS we need:
 import { withStyles } from "@material-ui/styles";
 
 ///JSS also known as CSS in JS. This feature
@@ -54,7 +55,7 @@ class MiniPalette extends Component {
     //with material-ui. it takes our "main" style and
     //gives it a unique id (on top of the class name)
     //which makes it unique to this component.
-    const { classes, paletteName, emoji, colors, id } = this.props;
+    const { classes, paletteName, emoji, colors } = this.props;
 
     const miniColorBoxes = colors.map((el) => (
       <div
@@ -64,10 +65,8 @@ class MiniPalette extends Component {
       ></div>
     ));
     return (
-      <div className={classes.root}>
-        <Link to={`/palette/${id}`}>
-          <div className={classes.colors}>{miniColorBoxes}</div>
-        </Link>
+      <div className={classes.root} onClick={this.props.handleClick}>
+        <div className={classes.colors}>{miniColorBoxes}</div>
         <h5 className={classes.title}>
           {paletteName} <span className={classes.emoji}>{emoji}</span>
         </h5>

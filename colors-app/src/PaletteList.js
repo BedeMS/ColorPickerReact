@@ -20,21 +20,24 @@ const styles = {
     border: "1px solid white",
   },
   nav: {
-      display: "flex",
-      width: "100%",
-      justifyContent: "space-between",
-      color: "white"
+    display: "flex",
+    width: "100%",
+    justifyContent: "space-between",
+    color: "white",
   },
   palettes: {
-        boxSizing: "border-box",
-        width: "100%",
-        display: "grid",
-        gridTemplateColumns: "repeat(3, 30%)",
-        gridGap: "5%",
+    boxSizing: "border-box",
+    width: "100%",
+    display: "grid",
+    gridTemplateColumns: "repeat(3, 30%)",
+    gridGap: "5%",
   },
 };
 
 class PaletteList extends Component {
+  goToPalette(id) {
+    this.props.history.push(`/palette/${id}`);
+  }
   render() {
     const { classes, palettes } = this.props;
     return (
@@ -45,7 +48,10 @@ class PaletteList extends Component {
           </nav>
           <div className={classes.palettes}>
             {palettes.map((palette) => (
-              <MiniPalette {...palette} />
+              <MiniPalette
+                {...palette}
+                handleClick={() => this.goToPalette(palette.id)}
+              />
             ))}
           </div>
         </div>

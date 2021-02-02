@@ -36,7 +36,7 @@ function generatePalette(starterPalette) {
     colors: {},
   };
   for (let level of levels) {
-    //color: {
+    //colors: {
     //  50: [], 100: []
     // }
     newPalette.colors[level] = [];
