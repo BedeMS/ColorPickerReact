@@ -2,52 +2,11 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 /// in order to have JSS we need:
 import { withStyles } from "@material-ui/styles";
+import styles from "./styles/MiniPaletteStyles"
 
 ///JSS also known as CSS in JS. This feature
 // allows us to use nestings, and component
 //specific styling. Syntax for it is still: JS (Camelcase and Strings).
-const styles = {
-  root: {
-    backgroundColor: "white",
-    borderRadius: "5px",
-    padding: "0.5rem",
-    position: "relative",
-    overflow: "hidder",
-    border: "1px solid black",
-    "&:hover": {
-      cursor: "pointer",
-    },
-  },
-  colors: {
-    backgroundColor: "#dae1e4",
-    borderRadius: "5px",
-    overflow: "hidden",
-    height: "150px",
-    width: "100%",
-  },
-  title: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    margin: 0,
-    color: "black",
-    paddingTop: "0.5rem",
-    fontSize: "1rem",
-    position: "relative",
-  },
-  emoji: {
-    marginLeft: "0.5rem",
-    fontSize: "1.5rem",
-  },
-  miniColor: {
-    height: "25%",
-    width: "20%",
-    display: "inline-block",
-    margin: "0 auto",
-    position: "relative",
-    marginBottom: "-3.5px",
-  },
-};
 
 class MiniPalette extends Component {
   render() {
