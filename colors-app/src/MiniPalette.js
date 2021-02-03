@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 /// in order to have JSS we need:
 import { withStyles } from "@material-ui/styles";
 import styles from "./styles/MiniPaletteStyles"
