@@ -41,6 +41,7 @@ const styles = (theme) => ({
   navBtns: {
     display: "flex",
     alignItems: "center"
+
   },
   validatorInput: {
     display: "flex",
