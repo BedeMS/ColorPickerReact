@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 /// in order to have JSS we need:
 import { withStyles } from "@material-ui/styles";
-import styles from "./styles/MiniPaletteStyles"
+import styles from "./styles/MiniPaletteStyles";
 
+//Material-UI is one of the top user interface libraries for React out there
 ///JSS also known as CSS in JS. This feature
 // allows us to use nestings, and component
 //specific styling. Syntax for it is still: JS (Camelcase and Strings).

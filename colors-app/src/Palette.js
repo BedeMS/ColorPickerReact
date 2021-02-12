@@ -32,7 +32,7 @@ class Palette extends Component {
         paletteId={id}
         showingFullPalette
       />
-    ));
+    )); 
     return (
       <div className={classes.Palette}>
         <Navbar

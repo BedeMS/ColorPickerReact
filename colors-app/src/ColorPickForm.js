@@ -79,7 +79,7 @@ class ColorPickForm extends Component {
             variant='filled'
             margin='normal'
             name="newColorName"
-            value={newColorName}
+            value={newColorName} 
             onChange={this.handleChange}
             validators={["required", "isColorNameUnique", "isColorUnique"]}
             errorMessages={[
