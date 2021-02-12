@@ -2,6 +2,7 @@ import React, { Component } from "react";
 /// in order to have JSS we need:
 import { withStyles } from "@material-ui/styles";
 import styles from "./styles/MiniPaletteStyles";
+import DeleteIcon from "@material-ui/icons/Delete";
 
 //Material-UI is one of the top user interface libraries for React out there
 ///JSS also known as CSS in JS. This feature
@@ -9,12 +10,22 @@ import styles from "./styles/MiniPaletteStyles";
 //specific styling. Syntax for it is still: JS (Camelcase and Strings).
 
 class MiniPalette extends Component {
+  constructor(props) {
+    super(props);
+    this.deletePalette = this.deletePalette.bind(this);
+  }
+
+  deletePalette(e) {
+    e.stopPropagation();
+    this.props.handleDelete(this.props.id)
+  }
+  
   render() {
     // we automatically get "classes" with our props
     //with material-ui. it takes our "main" style and
     //gives it a unique id (on top of the class name)
     //which makes it unique to this component.
-    const { classes, paletteName, emoji, colors } = this.props;
+    const { classes, paletteName, emoji, colors, handleClick } = this.props;
 
     const miniColorBoxes = colors.map((el) => (
       <div
@@ -24,7 +35,13 @@ class MiniPalette extends Component {
       ></div>
     ));
     return (
-      <div className={classes.root} onClick={this.props.handleClick}>
+      <div className={classes.root} onClick={handleClick}>
+        <DeleteIcon
+          className={classes.deleteIcon}
+          style={{ transition: "all .5s ease-in-out" }}
+          onClick={this.deletePalette}
+        />
+
         <div className={classes.colors}>{miniColorBoxes}</div>
         <h5 className={classes.title}>
           {paletteName} <span className={classes.emoji}>{emoji}</span>
