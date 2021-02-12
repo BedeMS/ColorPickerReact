@@ -1,4 +1,6 @@
 import {DRAWER_WIDTH} from "../constants";
+import sizes from "./sizes";
+
 const drawerWidth = DRAWER_WIDTH;
 
 export default (theme) => ({
@@ -30,15 +32,22 @@ export default (theme) => ({
     marginRight: 20,
   },
   navBtns: {
-    marginRight: "1rem",
+    marginRight: "0.5rem",
     display: "flex",
     alignItems: "center",
     "& a": {
       textDecoration: "none",
     },
+    [sizes.down("xs")]: {
+      marginRight: "0",
+    },
   },
   button: {
     margin: "0 0.5rem",
+    [sizes.down("xs")]: {
+      marginRight: "0 0.5rem",
+      padding: "0.3rem"
+    },
   },
   validatorInput: {
     display: "flex",
