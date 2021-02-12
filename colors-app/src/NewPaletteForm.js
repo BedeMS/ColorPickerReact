@@ -152,7 +152,7 @@ class NewPaletteForm extends React.Component {
         <PaletteFormNav
           open={open}
           palettes={palettes}
-          handleSumbit={this.handleSubmit}
+          handleSubmit={this.handleSubmit}
           handleDrawerOpen={this.handleDrawerOpen}
         />
         <Drawer

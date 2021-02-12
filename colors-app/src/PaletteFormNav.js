@@ -40,8 +40,15 @@ const styles = (theme) => ({
     marginRight: 20,
   },
   navBtns: {
+    marginRight: "1rem",
     display: "flex",
     alignItems: "center",
+    "& a": {
+      textDecoration: "none"
+    }
+  },
+  button: {
+    margin: "0 0.5rem",
   },
   validatorInput: {
     display: "flex",
@@ -50,6 +57,18 @@ const styles = (theme) => ({
 });
 
 class PaletteFormNav extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      formShowing: false,
+    };
+    this.showForm = this.showForm.bind(this);
+  }
+
+  showForm() {
+    this.setState({ formShowing: true });
+  }
+
   render() {
     const { classes, open, palettes, handleSubmit } = this.props;
     return (
@@ -103,14 +122,28 @@ class PaletteFormNav extends Component {
                   Save Palette
                 </Button>
               </ValidatorForm> */}
-            <PaletteMetaForm palettes={palettes} handleSubmit={handleSubmit} />
             <Link to="/">
-              <Button variant="contained" color="primary">
+              <Button
+                variant="contained"
+                color="primary"
+                className={classes.button}
+              >
                 Go Back
               </Button>
             </Link>
+            <Button
+              variant="contained"
+              color="secondary"
+              onClick={this.showForm}
+              className={classes.button}
+            >
+              Save
+            </Button>
           </div>
         </AppBar>
+        {this.state.formShowing && (
+          <PaletteMetaForm palettes={palettes} handleSubmit={handleSubmit} />
+        )}
       </div>
     );
   }
