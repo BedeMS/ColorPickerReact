@@ -17,15 +17,15 @@ export default {
     // this is a computed value
     [sizes.down("lg")]: {
       width: "25%",
-      height: (props) => (props.showingFullPalette ? "20%" : "50%"),
+      height: (props) => (props.showingFullPalette ? "20%" : "33.3%"),
     },
     [sizes.down("md")]: {
       width: "50%",
-      height: (props) => (props.showingFullPalette ? "10%" : "50%"),
+      height: (props) => (props.showingFullPalette ? "10%" : "20%"),
     },
     [sizes.down("xs")]: {
       width: "100%",
-      height: (props) => (props.showingFullPalette ? "5%" : "50%"),
+      height: (props) => (props.showingFullPalette ? "5%" : "10%"),
     },
   },
   copyText: {
@@ -117,6 +117,9 @@ export default {
       marginBottom: "0",
       padding: "1rem",
       textTransform: "uppercase",
+      [sizes.down("xs")]: {
+        fontSize: "5rem"
+      }
     },
     "& p": {
       fontSize: "2rem",
