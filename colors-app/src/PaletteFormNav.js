@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PaletteMetaForm from "./PaletteMetaForm";
 import { Link } from "react-router-dom";
 import classNames from "classnames";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -9,8 +8,8 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import Button from "@material-ui/core/Button";
 import MenuIcon from "@material-ui/icons/Menu";
-import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 import { withStyles } from "@material-ui/core/styles";
+import PaletteMetaForm from "./PaletteMetaForm";
 import styles from './styles/PaletteFormNavStyles';
 
 class PaletteFormNav extends Component {

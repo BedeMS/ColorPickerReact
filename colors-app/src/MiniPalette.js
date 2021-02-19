@@ -1,8 +1,8 @@
 import React, { PureComponent } from "react";
 /// in order to have JSS we need:
 import { withStyles } from "@material-ui/styles";
-import styles from "./styles/MiniPaletteStyles";
 import DeleteIcon from "@material-ui/icons/Delete";
+import styles from "./styles/MiniPaletteStyles";
 
 //Material-UI is one of the top user interface libraries for React out there
 ///JSS also known as CSS in JS. This feature

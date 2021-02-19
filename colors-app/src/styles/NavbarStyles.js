@@ -27,6 +27,9 @@ export default {
     display: "inline-block",
     width: "340px",
     margin: "0 10px",
+    [sizes.down('sm')]: {
+      width: "150px"
+    },
     "& .rc-slider-track": {
       backgroundColor: "transparent",
       height: "8px",

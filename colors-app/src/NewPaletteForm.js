@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
@@ -11,10 +11,7 @@ import DraggleColorList from "./DraggleColorList";
 import { arrayMove } from "react-sortable-hoc";
 import PaletteFormNav from "./PaletteFormNav";
 import ColorPickForm from "./ColorPickForm";
-import styles from './styles/NewPaletteFormStyles';
-const drawerWidth = 400;
-
-
+import styles from "./styles/NewPaletteFormStyles";
 
 class NewPaletteForm extends React.Component {
   static defaultProps = {
@@ -64,8 +61,8 @@ class NewPaletteForm extends React.Component {
   }
 
   handleSubmit(newPalette) {
-    newPalette.id = newPalette.paletteName.toLowerCase().replace(/ /g, "-")
-    newPalette.colors = this.state.colors
+    newPalette.id = newPalette.paletteName.toLowerCase().replace(/ /g, "-");
+    newPalette.colors = this.state.colors;
     this.props.savePalette(newPalette);
     this.props.history.push("/");
   }
@@ -111,7 +108,9 @@ class NewPaletteForm extends React.Component {
           </div>
           <Divider />
           <div className={classes.contianer}>
-            <Typography variant="h4" gutterBottom>Design Your Palette</Typography>
+            <Typography variant="h4" gutterBottom>
+              Design Your Palette
+            </Typography>
             <div className={classes.buttons}>
               <Button
                 variant="contained"
