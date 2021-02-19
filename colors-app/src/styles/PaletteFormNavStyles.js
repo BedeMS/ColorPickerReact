@@ -1,4 +1,4 @@
-import {DRAWER_WIDTH} from "../constants";
+import { DRAWER_WIDTH } from "../constants";
 import sizes from "./sizes";
 
 const drawerWidth = DRAWER_WIDTH;
@@ -46,7 +46,7 @@ export default (theme) => ({
     margin: "0 0.5rem",
     [sizes.down("xs")]: {
       marginRight: "0 0.5rem",
-      padding: "0.3rem"
+      padding: "0.3rem",
     },
   },
   validatorInput: {
