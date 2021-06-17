@@ -18,6 +18,7 @@ class SingleColorPalette extends Component {
   gatherShades(palette, colorToFilterBy) {
     // return all shades of given color
     let shades = [];
+    // this is an object with arrays inside with each shade set
     let allColors = palette.colors;
     for (let key in allColors) {
       shades = shades.concat(
@@ -32,6 +33,7 @@ class SingleColorPalette extends Component {
   }
 
   render() {
+    console.log(this._shades)
     const { classes } = this.props;
     const { format } = this.state;
     const { paletteName, emoji, id } = this.props.palette;
